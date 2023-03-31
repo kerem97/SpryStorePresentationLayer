@@ -1,0 +1,38 @@
+﻿
+@model List<Employee>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyad</th>
+        <th>Personel Görseli</th>
+        <th>Personel Maili</th>
+        <th>Personel Durumu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.EmployeeID</td>
+            <td>@x.Name</td>
+            <td>@x.Surname</td>
+            <td>@x.Image</td>
+            <td>@x.Mail</td>
+            <td>@x.Status</td>
+            <td><a href="/Employee/DeleteEmployee/@x.EmployeeID" class="btn btn-outline-warning">Sil</a></td>
+            <td><a href="/Employee/UpdateEmployee/@x.EmployeeID" class="btn btn-outline-primary">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Employee/AddEmployee/" class="btn btn-outline-success">Yeni Personel Ekle</a>

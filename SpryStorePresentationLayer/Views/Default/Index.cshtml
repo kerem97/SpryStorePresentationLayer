@@ -1,0 +1,31 @@
+﻿@model List<SpryStoreEntityLayer.Concrete.Customer>
+
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Şehir</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.CustomerID</td>
+                <td>@x.CustomerName</td>
+                <td>@x.CustomerSurname</td>
+                <td>@x.CustomerCity</td>
+                <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="#" class="btn btn-outline-info">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+</div>

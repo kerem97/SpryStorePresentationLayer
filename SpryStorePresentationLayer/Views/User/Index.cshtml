@@ -1,0 +1,33 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kullanıcı Listesi</h1>
+
+<table class=" table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th>Detaylar</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Roller</th>
+    </tr>
+    <tr>
+        @foreach (var x in Model)
+        {
+            <td><img src="@x.ImageUrl" style="width:50px; height:50px; border-radius:50%; text-align:center;" /></td>
+            <td>@x.Name</td>
+            <td>@x.Surname</td>
+            <td>@x.City</td>
+            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-outline-warning">Roller</a></td>
+        }
+    </tr>
+</table>
