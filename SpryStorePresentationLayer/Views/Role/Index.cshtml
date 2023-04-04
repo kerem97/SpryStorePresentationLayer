@@ -6,7 +6,7 @@
 
 <h1>Index</h1>
 
-<table class="table table-hover">
+<table class="table table-striped">
     <tr>
         <th>#</th>
         <th>Rol Adı</th>
@@ -18,9 +18,9 @@
         <tr>
             <td>@x.Id</td>
             <td>@x.Name</td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-info">Güncelle</a></td>
+            <td><a href="/Role/DeleteRole/@x.Id" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Role/UpdateRole/@x.Id" class="btn btn-outline-info">Güncelle</a></td>
         </tr>
     }
 </table>
-<button class="btn btn-outline-dark">Kaydet</button>
+<a href="/Role/AddRole/" class="btn btn-outline-dark">Yeni Rol Girişi</a>
