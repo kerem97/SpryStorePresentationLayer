@@ -10,5 +10,6 @@ namespace SpryStoreBusinessLayer.Abstract
     public interface IProductService : IGenericService<Product>
     {
         List<Product> TGetProductListWithCategory();
+        List<Product> TGetLast4Product();
     }
 }

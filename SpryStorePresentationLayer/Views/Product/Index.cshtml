@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-}
+
 
 <table class="table table-bordered">
     <tr>
@@ -14,7 +14,7 @@
         <th>Kategori</th>
         <th>Sil</th>
         <th>Güncelle</th>
-        <th>Detaylar</th>
+
 
     </tr>
     @foreach (var x in Model)
@@ -26,8 +26,9 @@
             <td>@x.Category.CategoryName</td>
             <td><a href="/Product/DeleteProduct/@x.ProductID" class="btn btn-outline-warning">Sil</a></td>
             <td><a href="/Product/UpdateProduct/@x.ProductID" class="btn btn-outline-primary">Güncelle</a></td>
-            <td><a href="#" class="btn btn-outline-primary">Detaylar</a></td>
+
         </tr>
     }
 </table>
 <a href="/Product/AddProduct" class="btn btn-outline-success">Yeni Ürün Ekle</a>
+<a href="/Product/GetLast4Products" class="btn btn-outline-dark">Son Eklenen Ürünleri Gör</a>
