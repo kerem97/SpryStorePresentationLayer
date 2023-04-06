@@ -30,6 +30,7 @@ namespace SpryStorePresentationLayer.Controllers
         public async Task<IActionResult> AssignRole(int id)
         {
             var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
+            TempData["userid"] = user.Id;
             var roles = _roleManager.Roles.ToList();
             var userRoles = await _userManager.GetRolesAsync(user);
             List<RoleAssignViewModel> roleAssignViewModels = new List<RoleAssignViewModel>();
@@ -43,5 +44,24 @@ namespace SpryStorePresentationLayer.Controllers
             }
             return View(roleAssignViewModels);
         }
+        [HttpPost]
+        public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> roleAssignViewModel)
+        {
+            var userid = (int)TempData["userid"];
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == userid);
+            foreach (var x in roleAssignViewModel)
+            {
+                if (x.RoleExist)
+                {
+                    await _userManager.AddToRoleAsync(user, x.RoleName);
+                }
+                else
+                {
+                    await _userManager.RemoveFromRoleAsync(user, x.RoleName);
+                }
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
+//wqbafxewgmstlfjo google key

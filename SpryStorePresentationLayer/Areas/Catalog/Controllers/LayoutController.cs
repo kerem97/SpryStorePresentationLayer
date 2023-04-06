@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 namespace SpryStorePresentationLayer.Areas.Catalog.Controllers
 {
     [Area("Catalog")]
+    [AllowAnonymous]
     public class LayoutController : Controller
     {
         public IActionResult _CatalogLayout()
