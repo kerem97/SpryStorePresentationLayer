@@ -45,6 +45,9 @@ namespace SpryStorePresentationLayer
             services.AddScoped<IContactDal, EfContactDal>();
             services.AddScoped<IContactService, ContactManager>();
 
+            services.AddScoped<IAdressDal, EfAdressDal>();
+            services.AddScoped<IAdressService, AdressManager>();
+
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
@@ -90,7 +93,7 @@ namespace SpryStorePresentationLayer
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-        
+
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

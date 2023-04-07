@@ -10,8 +10,7 @@
 <div class="send-message">
     <div class="container">
         <div class="row">
-            @await Component.InvokeAsync("SendMessage")
-            
+            @await Html.PartialAsync("~/Areas/Catalog/Views/Contact/SendMessage.cshtml")
         </div>
     </div>
 </div>
