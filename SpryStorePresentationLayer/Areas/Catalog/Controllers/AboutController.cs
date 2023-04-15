@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SpryStoreBusinessLayer.Abstract;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace SpryStorePresentationLayer.Areas.Catalog.Controllers
 {
 
     [Area("Catalog")]
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         private readonly IEmployeeService _employeeService;
